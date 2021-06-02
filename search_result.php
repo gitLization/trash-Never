@@ -1,5 +1,5 @@
 <?php
-    $con = new PDO("mysqll:host=localhost;dbname=team5DB", 'root', '1234');
+    $con = new PDO("mysqli:host=localhost;dbname=team5db", 'root', '');
     
     if(isset($_POST["submit"])) {
         $str = $_POST["trash"];
@@ -28,6 +28,7 @@
 
         else{
             echo "다시 입력해주세요";
+            history.back();
         }
     }
     ?>

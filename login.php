@@ -3,16 +3,16 @@
     
     $userID = $_POST['userID'];
     $userPassword = $_POST['userPassword'];
-    $query = "select * from userTBL where userID = $userID";
-    $result = $connect -> query($query);
+    $query = "SELECT * FROM userTBL where userID = $userID";
+    $result = $conn -> query($query);
     
     //비밀번호 검사
     if (mysqli_num_rows($result) == 1) {
         $row=mysqli_fetch_assoc($result);
  
-            if($row['pw']==$pw){
-                $_SESSION['userid']=$id;
-                if(isset($_SESSION['userid'])){
+            if($row['userPassword']==$userPasswrod){
+                $_SESSION['userID']=$userID;
+                if(isset($_SESSION['userID'])){
                  ?>      <script>
                             alert("로그인 되었습니다.");
                             location.replace("./index.php");
