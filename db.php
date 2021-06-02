@@ -1,10 +1,14 @@
 <?php
-    sesstion_start();
-    $conn=mysqli_connect("127.0.0.1", "root", "", "team5db");
-    $conn->set_charset("uft8");
-
-    function mq($sql) {
-        global $conn;
-        return $conn->query($sql);
+    $db_host = "localhost";
+    $db_username = "root";
+    $db_password = "";
+    
+    try {
+        $conn = new PDO("mysql:host=$servername;dbname=team5db", $db_username, $db_password);
+        // set the PDO error mode to exception
+        $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo "Connected successfully";
+    } catch(PDOException $e) {
+        echo "Connection failed: " . $e->getMessage();
     }
 ?>

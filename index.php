@@ -1,4 +1,4 @@
-
+<?php include "db.php" ?>
 <!doctype html>
 <html lang="ko">
   <head>
@@ -92,16 +92,9 @@ https://www.tooplate.com/view/2115-marvel
 
                         <p>배출 방법이 궁금한 품목을 검색해보면 배출 방법을 알려드립니다.</p>
                         
-                        <form action="search_result.php" method="post">
-<!--                            <div class="search">
-                              <input type="text" name="trash" placeholder="검색어를 입력해주세요.">
-                            </div>
-
-                            <div class="button">
-                              <button>검색</button>
-                            </div>-->
                             <div class="search">
-                                <input type="text" name="string">
+                               <form action="search_result.php" method="post">
+                                <input type="text" name="search">
                                 <input type="submit" name="submit">
                             </div>
                        </form>
@@ -406,3 +399,4 @@ https://www.tooplate.com/view/2115-marvel
 
   </body>
 </html>
+
