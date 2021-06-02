@@ -4,6 +4,7 @@
     $userID = $_POST['userID'];
     $userPassword = $_POST['userPassword'];
     $query = "SELECT * FROM userTBL where userID = $userID";
+    $conn = mysqli_connect('localhost', 'root', '', 'tema5DB');
     $result = $conn -> query($query);
     
     //비밀번호 검사
