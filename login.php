@@ -1,7 +1,5 @@
 <?php
-    session_start();
-    
-    $connect = mysqli_connect('localhost', 'root', '1234', 'team5DB') or die("fail");
+    include "./db.php";
     
     $userID = $_POST['userID'];
     $userPassword = $_POST['userPassword'];
@@ -45,9 +43,3 @@
         }
 ?>
 }
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-
