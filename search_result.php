@@ -2,7 +2,7 @@
     
     if(isset($_POST['search'])) {
         $str = $_POST['search'];
-        require_once 'db.php';
+        require_once 'database.php';
         
         if($conn) {
             $sql = "SELECT * FROM `trashListTBL` WHERE LIKE '%".$str."%'";
