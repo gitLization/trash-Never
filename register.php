@@ -1,5 +1,5 @@
 <?php
-    require('db.php');
+    require('database.php');
 
 $userID = $_POST['userID'];
 $userPassword = $_POST['userPassword'];
@@ -10,7 +10,6 @@ switch ($_POST['institution']) {
     case 2: $officeName == "인천광역시"; break;
     case 3: $officeName == "대구광역시"; break;
     case 4: $officeName == "부산광역시"; break;
-                       
 }
 
 $query = mysqli_query($conn, "INSERT INTO 
@@ -25,6 +24,6 @@ if($result) {
 }
 
 
-echo("<script>alert('회원가입이 되었습니다!'); location.href='./index.php'; </script>");
+echo("<script>alert('회원가입이 되었습니다!'); location.href='.index.php'; </script>");
 
 ?>
