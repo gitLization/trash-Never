@@ -1,11 +1,11 @@
 <?php
     session_start();
-    include "db.php";
+    include "database.php";
     
     $userID = $_POST['userID'];
     $userPassword = $_POST['userPassword'];
     $query = "SELECT * FROM userTBL where userID = $userID";
-    $conn = mysqli_connect('192.168.253.139', 'root', '', 'tema5DB');
+    $conn = mysqli_connect('localhost', 'root', '', 'tema5DB');
     $result = $conn -> query($query);
     
     //비밀번호 검사
@@ -17,7 +17,7 @@
                 if(isset($_SESSION['userID'])){
                  ?>      <script>
                             alert("로그인 되었습니다.");
-                            location.replace("./index.php");
+                            location.replace(".index.php");
                           </script>
 <?php
                 }
