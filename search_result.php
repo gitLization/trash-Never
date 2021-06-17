@@ -1,3 +1,17 @@
+<!-- search.html 수정해야합니다.
+<p>배출 방법이 궁금한 품목을 검색해보면 배출 방법을 알려드립니다.</p>
+                        
+                        <form action="search_result.php" method="post">
+                        <div class="search">
+                          <input type="text" name="keyword" placeholder="검색어를 입력해주세요.">
+                        </div>
+                        <div class="ml-lg-auto col-lg-5 col-12">
+                            <input type="submit" class="form-control submit-btn" 
+                                  name="search_btn" value="search">
+                          </div>
+                        </form>
+                    </div> -->
+
 <?php
 if(!empty($_POST))
 {
