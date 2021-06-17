@@ -2,23 +2,26 @@
 <?php session_start(); ?>
 
 <?php
-    
-if (isset($_POST['register_btn'])) {
-        $userID = mysql_real_escape_string($_POST['userID']);
-        $userPassword = mysql_real_escape_string($_POST['userPassword']);
+    if(isset($_POST['userID']) && isset($_POST['userPassword'])) {
+        $userID = $_POST['userID'];
+        $userPassword = $_POST['userPassword'];
         
-        switch ($_POST["institution"]) {
-            case 1: $officeName == "서울특별시"; break;
-            case 2: $officeName == "인천광역시"; break;
-            case 3: $officeName == "대구광역시"; break;
-            case 4: $officeName == "부산광역시"; break;
+        $query = "SELECT * FROM `userTBL` WHERE userID='$userID' and userPassword='$userPassword'";
+        
+        $result = mysqli_query($mysqli, $query) or die(mysqli_error($mysqli));
+        $count = mysqli_num_rows($result);
+        
+        if ($count == 1) {
+            $_SESSION['userID'] = $userID;
         }
+        else {
+            $fmsg = "정보가 일치하지 않습니다!";
+        }
+    }
+    
+    if(isset($_SESSION['userID'])) {
+        $userID = $_SESSION['userID'];
+        echo "안녕하세요" .$userID. "";
         
-        $sql = "INSERT INTO userTBL(userID, userPassword, addedPoint, userPoint)"
-                . "VALUES('$userID', '$userPassword', NULL, NULL)";
-        mysqli_query($mysqli, $sql);
-        $_SESSION['message'] = "회원가입 되었습니다";
-        $_SESSION['userID'] = $userID;
-        header("location: index.html");
-}
-
+        header("Location: mypage.html");
+    }
