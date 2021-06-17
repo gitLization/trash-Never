@@ -4,7 +4,7 @@
         $str = $_POST['search'];
         require_once 'database.php';
         
-        if($conn) {
+        if($mysqli) {
             $sql = "SELECT * FROM `trashListTBL` WHERE LIKE '%".$str."%'";
             $result_query = mysql_query($sql);
             
