@@ -6,7 +6,7 @@
         $userID = $_POST['userID'];
         $userPassword = $_POST['userPassword'];
         
-        $query = "SELECT * FROM `userTBL` WHERE userID='$userID' and password='$userPassword'";
+        $query = "SELECT * FROM `userTBL` WHERE userID='$userID' and userPassword='$userPassword'";
         
         $result = mysqli_query($mysqli, $query) or die(mysqli_error($mysqli));
         $count = mysqli_num_rows($result);
