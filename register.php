@@ -22,6 +22,7 @@
     if(isset($_SESSION['userID'])) {
         $userID = $_SESSION['userID'];
         echo "안녕하세요" .$userID. "";
+        $_SESSION['institution'] = $officeName;
         
         header("Location: mypage.html");
     }
