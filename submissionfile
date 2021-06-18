@@ -6,7 +6,9 @@
 - 20190998: 백엔드-로그인 및 회원가입 기능과 조회기능의 php구현
 
 3. Environment
+- MySQL의 쿼리문으로 데이터베이스 작업
 - Xampp의 Apache서버 실행
+- netBeans에서 phpwebpage와 php확장자를 이용하여 파일 작성하고 실행
 
 4. Prerequisite
 - Xampp, MySQL, php파일을 실행할 수 있는 플랫폼(Apache NetBeans 등)
