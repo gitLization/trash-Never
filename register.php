@@ -1,4 +1,3 @@
-
 <?php
     
 if (isset($_POST['register_btn'])) {
@@ -19,10 +18,17 @@ if (isset($_POST['register_btn'])) {
 //                . "VALUES('$userID', '$userPassword', '$officeName', NULL)";
         //mysqli_query($mysqli, $sql2);
         
-        //트랜잭션으로 수정할 예정
+        $dsn = 'mysql:dbname=neverdb;host=localhost';
+        try {
+            $dbh = new PDO($dsn, 'root', 'root_password');
+        } catch (PDOException $e) {
+            echo 'Connection failed: ' . $e->getMessage();
+        }
+        
+        $stmt = $dbh->prepare("CALL  p_register('$userID', '$userPassword', 0, 0, '$userID', '$officeName', 'undifined')");
+  
         $_SESSION['message'] = "회원가입 되었습니다";
         $_SESSION['userID'] = $userID;
         $_SESSION['institution'] = $officeName;
         header("location: mypage.html");
 }
-
