@@ -15,7 +15,7 @@
             $_SESSION['userID'] = $userID;
         }
         else {
-            echo "정보가 일치하지 않습니다!";
+              $fmsg = "정보가 일치하지 않습니다!";;
         }
     }
     
